@@ -113,10 +113,10 @@ public class HostConnection {
 		// Read user input, and store it in the String variable declared above.
 		if ( (serverUerInputLine = scannerInput.nextLine()) != null ) {
 			
-			// Write user input to Client.
+			// Write input to Client.
 			outputStream.println(serverUerInputLine); 
 			
-			// If user input is "Bye!" - Break/exit the while loop.
+			// If input is "Bye!" - close connection.
 			if ( serverUerInputLine.equals("Bye!" ) ) {
 				System.out.println("Server will exit.");
 				close();
