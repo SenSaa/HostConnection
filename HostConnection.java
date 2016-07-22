@@ -85,28 +85,17 @@ public class HostConnection {
 		
 		String input;
 		// Read client input, and while it's not null, then...
-		////while ( (input = inputStream.readLine()) != null ) { 
 		if ( (input = inputStream.readLine()) != null ) { 
 					
 			// Write client input (print client input line).
 			System.err.println("Client wrote: " + input);
-			// Write client input back to the client.
-			//outputStream.writeUTF(input);
-			////outputStream.println(input); //// <-- This line was preventing the switch between write & read modes.
 			
 			// If client input is "Bye!" - exit app.
 			if ( input.equals("Bye!") ) {
 				System.out.println("Server will exit.");
 				System.exit(1); // Exit
 			}
-			/*
-			// If client input is "Server!" - Break/exit the while loop.
-			else if ( input.equals("Server!") ) {
-				System.out.println("Server switched to writing mode"); 
-				//System.out.print ("Server First Input: "); // First input field for user.
-				break; // End while loop.
-			}
-			*/
+
 		}
 		
 		writeToClient();
@@ -122,7 +111,6 @@ public class HostConnection {
 		System.err.print ("Server Input: "); // First input field for user.
 		
 		// Read user input, and store it in the String variable declared above.
-		////while ( (serverUerInputLine = userInput.readLine()) != null ) {
 		if ( (serverUerInputLine = scannerInput.nextLine()) != null ) {
 			
 			// Write user input to Client.
@@ -133,13 +121,6 @@ public class HostConnection {
 				System.out.println("Server will exit.");
 				close();
 			}
-			/*
-			// If user input is "Client!" - Break/exit the while loop.
-			else if ( serverUerInputLine.equals("Client!") ) { // If Server writes Client
-				System.out.println("Server switched to reading mode!");
-				break; // End while loop.
-			}
-			*/
 			
 		}
 		readClientInput(); 
